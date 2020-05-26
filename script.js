@@ -14,7 +14,17 @@ function getAndSetTime() {
     h = d.getHours(), m = d.getMinutes(), s = d.getSeconds();
 
     // format the time
-    time = h + ':' + m + '.' + s;
+    let hFormated = h, mFormated = m, sFormated = s;
+    if (h < 10) {
+        hFormated = '0' + h;
+    }
+    if (m < 10) {
+        mFormated = '0' + m;
+    }
+    if (s < 10) {
+        sFormated = '0' + s;
+    }
+    time = hFormated + ':' + mFormated + '.' + sFormated;
 
     // set the time to html
     document.getElementById('time').innerText = time;
